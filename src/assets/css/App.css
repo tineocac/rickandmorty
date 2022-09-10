@@ -1,7 +1,25 @@
-.container{
+.nav-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.nav-title{
+  text-decoration: none;
+  font-size: 3rem;
+  color: #fff;
+}
+
+.location-container{
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+.location-info{
+  display: flex;
+  gap: 2em;
 }
 
 .cards{
