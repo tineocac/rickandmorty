@@ -1,10 +1,11 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import useTypeId from '../assets/hooks/useTypeId';
 import FunctionsInput from './FunctionsInput';
 
 const Navbar = ({ title, setLocation }) => {
 
-    const [typeId, setTypeId] = useState('')
+    const { typeId, setTypeId} = useTypeId()
 
     const [isInputText, setInputText] = useState(true)
 
