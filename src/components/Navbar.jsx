@@ -1,24 +1,18 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import FunctionsInput from './FunctionsInput';
 
-const Navbar = ({title, setLocation}) => {
+const Navbar = ({ title, setLocation }) => {
 
-    const [ typeId, setTypeId] = useState('type location id')
+    const [typeId, setTypeId] = useState('')
 
-    const eraseText = () => {
-        if( typeId === 'type location id'){
-            setTypeId('')
-        }
-    }
-
+    const [isInputText, setInputText] = useState(true)
 
     const searchLocation = () => {
         axios.get(`https://rickandmortyapi.com/api/location/${typeId}`)
             .then(res => setLocation(res.data))
-            setTypeId('')
+        setTypeId('')
     }
-
-    console.log(typeId);
 
     return (
         <div className='nav-container'>
@@ -26,8 +20,11 @@ const Navbar = ({title, setLocation}) => {
                 <img className='nav-img' src="" alt="" />
             </nav>
             <a className='nav-title' href="./">{title}</a>
-            <input onClick={eraseText} type="text"  value={typeId} onChange={ e =>setTypeId(e.target.value)}/>
-            <button onClick={searchLocation}>Search</button>
+            <div className="container-search">
+            <FunctionsInput isInputText={isInputText} setInputText={setInputText} typeId={typeId} setTypeId={setTypeId} /> 
+            <button className='button-search' onClick={searchLocation}>Search</button>       
+            </div>
+            
         </div>
     );
 };

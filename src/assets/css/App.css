@@ -11,6 +11,33 @@
   color: #fff;
 }
 
+.container-search{
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.button-search{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.input-search{
+ width: 400px;
+ margin-right: 5em;
+}
+
+
+.list-locations{
+  position: absolute;
+  background: black;
+  list-style: none;
+  width: 100%;
+  padding: 0;
+}
+
+
 .location-container{
   display: flex;
   align-items: center;

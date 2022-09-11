@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar title="Rick and Morty Wiki" setLocation={setLocation} />
+      <Navbar title="Rick and Morty Wiki" location={location} setLocation={setLocation} />
       <Locations location={location} setLocation={setLocation} />
     </div>
   )

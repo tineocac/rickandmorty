@@ -11,10 +11,26 @@ const Residents = ({ url }) => {
     }, [])
 
     return (
-        <li className="content-card">
-            {resident.name}
-            <img className="img" src={resident.image} alt="" />
-        </li>
+        <div className="content-card">
+            <h1>
+                {resident.name}
+            </h1>
+            <li>
+                <img className="img" src={resident.image} alt="" />
+            </li>
+            <li>
+                {resident.status}
+            </li>
+
+            <li>
+                <b>origin: </b>
+                {resident.origin?.name}
+            </li>
+
+            <li>
+                <b>appearance in episodes: </b> {resident.episode?.length}
+            </li>
+        </div>
 
 
     );
