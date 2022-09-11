@@ -10,8 +10,11 @@ const Navbar = ({ title, setLocation }) => {
 
 
     const searchLocation = () => {
+        setInputText(true)
         axios.get(`https://rickandmortyapi.com/api/location/${typeId}`)
-            .then(res => setLocation(res.data))
+            .then(res => setLocation(res.data)) 
+
+            console.log(isInputText);
     }
 
     return (
