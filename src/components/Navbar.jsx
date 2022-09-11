@@ -5,17 +5,13 @@ import FunctionsInput from './FunctionsInput';
 
 const Navbar = ({ title, setLocation }) => {
 
-    const { typeId, setTypeId} = useTypeId()
-
-    const [isInputText, setInputText] = useState(true)
-
+    const { typeId, setTypeId } = useTypeId()
 
     const searchLocation = () => {
-        setInputText(true)
         axios.get(`https://rickandmortyapi.com/api/location/${typeId}`)
-            .then(res => setLocation(res.data)) 
+            .then(res => setLocation(res.data))
+        setTypeId('')
 
-            console.log(isInputText);
     }
 
     return (
@@ -25,10 +21,10 @@ const Navbar = ({ title, setLocation }) => {
             </nav>
             <a className='nav-title' href="./">{title}</a>
             <div className="container-search">
-            <FunctionsInput isInputText={isInputText} setInputText={setInputText} typeId={typeId} setTypeId={setTypeId} /> 
-            <button className='button-search' onClick={searchLocation}>Search</button>       
+                <FunctionsInput typeId={typeId} setTypeId={setTypeId} />
+                <button className='button-search' onClick={searchLocation}>Search</button>
             </div>
-            
+
         </div>
     );
 };

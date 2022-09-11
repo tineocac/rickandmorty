@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const FunctionsInput = ({ isInputText, setInputText, typeId, setTypeId }) => {
+const FunctionsInput = ({ typeId, setTypeId }) => {
 
     const [locations, setLocations] = useState({})
     const urlLocations = 'https://rickandmortyapi.com/api/location'
@@ -17,15 +17,18 @@ const FunctionsInput = ({ isInputText, setInputText, typeId, setTypeId }) => {
 
 
 
-    if ( isInputText === true || typeId === '') {
+    if (typeId === '') {
         return (
             <div className="input-container">
                 <input className="input-search" type="text" placeholder='type name location here' value={typeId} onChange={e => setTypeId(e.target.value)} />
             </div>)
-    } else if( typeId.length > 0){
+    } else {
         return (
-            <div className="input-container">
-                <input className="input-search" type="text" placeholder='type name location here' value={typeId} onChange={e => setTypeId(e.target.value)} />
+            <div
+
+                className="input-container">
+                <input className="input-search" type="text" placeholder='type name location here' value={typeId} onChange={e => setTypeId(e.target.value)}
+                />
 
                 <ul
                     className="list-locations">
