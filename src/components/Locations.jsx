@@ -13,7 +13,7 @@ const Locations = ({ location, setLocation }) => {
 
     return (
         <div className='location-container'>
-            <h2>{location.name}</h2>
+            <h2 className='location-title'>{location.name}</h2>
             <ul className='location-info'>
                 <li>
                     <b>type: </b> {location.type}

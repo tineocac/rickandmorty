@@ -20,25 +20,25 @@ const FunctionsInput = ({ typeId, setTypeId }) => {
     if (typeId === '') {
         return (
             <div className="input-container">
-                <input className="input-search" type="text" placeholder='type name location here' value={typeId} onChange={e => setTypeId(e.target.value)} />
+                <input className="input-search" type="text" placeholder='type id location here' value={typeId} onChange={e => setTypeId(e.target.value)} />
             </div>)
     } else {
         return (
             <div
 
                 className="input-container">
-                <input className="input-search" type="text" placeholder='type name location here' value={typeId} onChange={e => setTypeId(e.target.value)}
+                <input className="input-search" type="text" placeholder='type id location here' value={typeId} onChange={e => setTypeId(e.target.value)}
                 />
 
-                <ul
+                <ol
                     className="list-locations">
                     {
                         locations.map(location => (
-                            <li key={location.id}>{
+                            <li className="list-item" key={location.id}>{
                                 location.name}</li>
                         ))
                     }
-                </ul>
+                </ol>
 
             </div>
         )

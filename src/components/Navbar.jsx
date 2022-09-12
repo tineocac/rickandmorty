@@ -15,14 +15,13 @@ const Navbar = ({ title, setLocation }) => {
     }
 
     return (
-        <div className='nav-container'>
-            <nav className='nav-bg'>
-                <img className='nav-img' src="" alt="" />
-            </nav>
-            <a className='nav-title' href="./">{title}</a>
-            <div className="container-search">
-                <FunctionsInput typeId={typeId} setTypeId={setTypeId} />
-                <button className='button-search' onClick={searchLocation}>Search</button>
+        <div className='nav-bg'>
+            <div className="nav-container">
+                <a className='nav-title' href="./">{title}</a>
+                <div className="container-search">
+                    <FunctionsInput typeId={typeId} setTypeId={setTypeId} />
+                    <button className='button-search' onClick={searchLocation}>Search</button>
+                </div>
             </div>
 
         </div>
